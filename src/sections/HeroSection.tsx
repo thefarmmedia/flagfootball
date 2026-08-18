@@ -36,7 +36,7 @@ export default function HeroSection() {
           <img
             src="/images/logos/missouri-epic-logo.png"
             alt="Missouri EPIC NFL FLAG"
-            className="h-28 sm:h-36 lg:h-44 w-auto object-contain drop-shadow-2xl"
+            className="h-56 sm:h-72 lg:h-96 w-auto object-contain drop-shadow-2xl"
           />
         </motion.div>
 
