@@ -1,0 +1,182 @@
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { Target, Heart, Users, Shield } from 'lucide-react'
+import PageMeta from '../components/ui/PageMeta'
+import SectionHeader from '../components/ui/SectionHeader'
+import CTASection from '../sections/CTASection'
+import { siteConfig } from '../config/site'
+
+const values = [
+  {
+    icon: Target,
+    title: 'Excellence',
+    description: 'We hold our athletes, coaches, and programs to the highest standard. Good enough is never good enough at Missouri EPIC.',
+  },
+  {
+    icon: Heart,
+    title: 'Community',
+    description: 'We are a Southwest Missouri organization. Our players, families, and coaches make up a tight-knit community that supports each other.',
+  },
+  {
+    icon: Users,
+    title: 'Inclusion',
+    description: 'We believe every kid deserves to play. Our programs serve athletes of all skill levels, backgrounds, and abilities.',
+  },
+  {
+    icon: Shield,
+    title: 'Integrity',
+    description: 'We teach our athletes to compete with honor, treat opponents with respect, and win with humility.',
+  },
+]
+
+export default function About() {
+  return (
+    <>
+      <PageMeta
+        title="About Us"
+        description="Learn about Missouri EPIC Flag Football — who we are, what we stand for, and why we're Southwest Missouri's premier flag football organization."
+        path="/about"
+        ogTitle="About Missouri EPIC | Our Story & Mission"
+        ogDescription="Southwest Missouri's premier flag football organization offering NFL FLAG, Girls Flag, and 7v7 programs for youth athletes."
+      />
+
+      {/* Hero */}
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/10 to-gray-950" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="text-brand-red text-xs font-bold tracking-widest uppercase">
+                Est. {siteConfig.organization.founded} · Southwest Missouri
+              </span>
+            </div>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6">
+              About
+              <br />
+              <span className="text-brand-red">Missouri EPIC</span>
+            </h1>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+              We're more than a flag football organization. We're a community committed to developing the next generation of athletes, leaders, and champions across Southwest Missouri.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="py-20 lg:py-28 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <SectionHeader
+                eyebrow="Our Mission"
+                title="Developing Champions <span class='gradient-text'>On and Off the Field</span>"
+              />
+              <div className="mt-6 space-y-4 text-gray-400 leading-relaxed">
+                <p>
+                  Missouri EPIC was founded with a simple belief: every young athlete in Southwest Missouri deserves access to high-quality, competitive flag football in a safe and positive environment.
+                </p>
+                <p>
+                  We partner with the NFL FLAG program to bring the highest standard of youth flag football to our region, while also running a dedicated Girls Flag Football league and an elite 7v7 competitive program.
+                </p>
+                <p>
+                  Our coaches are more than football instructors — they're mentors who invest in the development of each athlete as a person, teaching lessons that go far beyond the field.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gray-900 border border-gray-800 rounded-2xl p-8"
+            >
+              <img
+                src="/images/logos/missouri-epic-logo.png"
+                alt="Missouri EPIC"
+                className="w-48 mx-auto mb-8 opacity-90"
+              />
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { label: 'Programs', value: '3' },
+                  { label: 'Age Groups', value: '6–17' },
+                  { label: 'Location', value: 'SW Missouri' },
+                  { label: 'Season', value: siteConfig.season.current },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <div className="text-3xl font-black text-brand-gold mb-1">{stat.value}</div>
+                    <div className="text-gray-400 text-sm">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 lg:py-28 bg-gray-900/30 border-y border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Our Values"
+            title="What We Stand For"
+            subtitle="These values guide everything we do at Missouri EPIC — from how we coach to how we compete."
+            centered
+          />
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, i) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-center"
+              >
+                <div className="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center mx-auto mb-4">
+                  <value.icon size={22} className="text-brand-red" />
+                </div>
+                <h3 className="text-white font-bold text-lg mb-2">{value.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Overview */}
+      <section className="py-20 lg:py-28 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <SectionHeader
+            eyebrow="Our Programs"
+            title="Three Paths to the Field"
+            subtitle="Every athlete's journey is different. We offer three distinct programs so every player can find their place."
+            centered
+          />
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            {[
+              { label: 'NFL FLAG Football', href: '/nfl-flag', color: 'bg-brand-red text-white' },
+              { label: 'Girls Flag Football', href: '/girls-flag-football', color: 'bg-brand-navy text-white' },
+              { label: '7v7 Competitive', href: '/7v7', color: 'bg-brand-gold text-gray-900' },
+            ].map((p) => (
+              <Link
+                key={p.href}
+                to={p.href}
+                className={`${p.color} font-bold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity`}
+              >
+                {p.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTASection />
+    </>
+  )
+}
