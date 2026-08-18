@@ -26,7 +26,7 @@ export default function SevenOnSeven() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url("https://images.unsplash.com/photo-1566577134770-3d85bb3a9cc4?auto=format&fit=crop&w=1920&q=80")',
+              'url("/images/photos/7.png")',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
