@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Check, ArrowRight, ExternalLink } from 'lucide-react'
+import { Check, ArrowRight, ExternalLink, Calendar, MapPin, Clock, Users, Shield } from 'lucide-react'
 import PageMeta from '../components/ui/PageMeta'
 import SectionHeader from '../components/ui/SectionHeader'
 import CTASection from '../sections/CTASection'
@@ -8,41 +8,63 @@ import { programs } from '../data/programs'
 import { siteConfig } from '../config/site'
 
 const program = programs.find((p) => p.id === 'nfl-flag')!
+const { season } = siteConfig
 
 export default function NFLFlag() {
   return (
     <>
       <PageMeta
         title="NFL FLAG Football"
-        description="Join Missouri EPIC's NFL FLAG program — the official youth flag football of the NFL. Coed leagues for ages 6–14 in Southwest Missouri."
+        description={`Missouri EPIC NFL FLAG Fall League — Tuesday Nights ${season.nflFlag.dates} at ${season.nflFlag.location}. Ages ${season.nflFlag.ageGroups.join(', ')}. Registration open!`}
         path="/nfl-flag"
         ogTitle="NFL FLAG Football | Missouri EPIC"
-        ogDescription="Join the official NFL youth flag football program. Coed leagues for ages 6–14 in Southwest Missouri."
+        ogDescription={`NFL FLAG Fall League in Branson, MO. ${season.nflFlag.dates}, Tuesday Nights. Ages 8U–17U. Registration open now!`}
       />
 
-      {/* Page Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 via-gray-950 to-gray-950" />
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Page Hero with photo background */}
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1560272564-d83b4c537b93?auto=format&fit=crop&w=1920&q=80")',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/30 rounded-full px-4 py-1.5 mb-6">
-              <div className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-              <span className="text-brand-red text-xs font-bold tracking-widest uppercase">
-                Official NFL Program · Coed · Ages {program.ageRange}
+            <div className="inline-flex items-center gap-2 bg-green-950/80 border border-green-700/50 rounded-full px-4 py-1.5 mb-6">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-green-400 text-xs font-bold tracking-widest uppercase">
+                Registration Open · Coed · Ages {season.nflFlag.ageGroups.join(' · ')}
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight mb-4">
               NFL FLAG
               <br />
               <span className="text-brand-red">Football</span>
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-xl text-gray-300 mb-6 leading-relaxed max-w-2xl">
               {program.longDescription}
             </p>
+
+            {/* Season quick facts */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              {[
+                { icon: Calendar, text: season.nflFlag.dates },
+                { icon: Clock,    text: season.nflFlag.gameDay },
+                { icon: Shield,   text: season.nflFlag.weeks },
+                { icon: MapPin,   text: season.nflFlag.location },
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-center gap-2 bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2 text-sm text-gray-200 font-medium">
+                  <Icon size={13} className="text-brand-red shrink-0" />
+                  {text}
+                </div>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               {siteConfig.registration.nflFlag ? (
@@ -72,6 +94,35 @@ export default function NFLFlag() {
         </div>
       </section>
 
+      {/* Age Divisions */}
+      <section className="py-12 bg-gray-900 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-6">
+            <Users size={20} className="text-brand-gold" />
+            <h2 className="text-xl font-extrabold text-white">Age Divisions</h2>
+            <span className="text-xs text-gray-500 font-medium ml-1">— {season.nflFlag.coedGroups.join(' & ')} are coed; all others open to all</span>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {season.nflFlag.ageGroups.map((age) => {
+              const isCoed = season.nflFlag.coedGroups.includes(age)
+              return (
+                <div
+                  key={age}
+                  className={`flex flex-col items-center px-6 py-4 rounded-xl border font-bold ${
+                    isCoed
+                      ? 'bg-brand-navy/30 border-blue-700/40 text-blue-300'
+                      : 'bg-brand-red/10 border-brand-red/30 text-white'
+                  }`}
+                >
+                  <span className="text-2xl">{age}</span>
+                  {isCoed && <span className="text-xs text-blue-400 font-semibold mt-0.5">Coed</span>}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-20 lg:py-28 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +133,6 @@ export default function NFLFlag() {
                 title="Everything Your Athlete Needs to <span class='text-brand-red'>Succeed</span>"
                 subtitle="The NFL FLAG experience is unlike any other youth sports program. Here's what's included:"
               />
-
               <ul className="mt-8 space-y-4">
                 {program.features.map((feature) => (
                   <motion.li
@@ -98,6 +148,19 @@ export default function NFLFlag() {
                     {feature}
                   </motion.li>
                 ))}
+                {season.nflFlag.flagsIncluded && (
+                  <motion.li
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-3 text-gray-300"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-brand-red/20 flex items-center justify-center shrink-0">
+                      <Check size={12} className="text-brand-red" />
+                    </div>
+                    Flags Included — no extra gear needed
+                  </motion.li>
+                )}
               </ul>
             </div>
 
@@ -122,27 +185,9 @@ export default function NFLFlag() {
         </div>
       </section>
 
-      {/* Age Groups */}
-      <section className="py-16 bg-gray-900/50 border-y border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-extrabold text-white text-center mb-8">Age Group Divisions</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {siteConfig.season.nflFlag.ageGroups.map((group) => (
-              <div
-                key={group}
-                className="bg-gray-900 border border-brand-red/30 rounded-xl p-4 text-center"
-              >
-                <div className="text-2xl font-black text-brand-red mb-1">{group}</div>
-                <div className="text-xs text-gray-400 font-medium">Ages</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CTASection
         title="Ready to Play NFL FLAG?"
-        subtitle="Join hundreds of young athletes already competing in Missouri EPIC's NFL FLAG program. Spots fill fast — register today."
+        subtitle={`Fall League runs ${season.nflFlag.dates}, ${season.nflFlag.gameDay} at ${season.nflFlag.location}. Spots fill fast.`}
         primaryLabel="Register for NFL FLAG"
         primaryHref={siteConfig.registration.nflFlag || '/contact'}
         secondaryLabel="Have Questions?"

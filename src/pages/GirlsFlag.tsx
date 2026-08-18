@@ -21,9 +21,15 @@ export default function GirlsFlag() {
       />
 
       {/* Page Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/20 via-gray-950 to-gray-950" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-navy/10 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1920&q=80")',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
