@@ -165,6 +165,18 @@ export default function NFLFlag() {
             </div>
 
             <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="rounded-2xl overflow-hidden"
+              >
+                <img
+                  src="/images/photos/5.png"
+                  alt="Flag football action"
+                  className="w-full h-64 object-cover object-center"
+                />
+              </motion.div>
               {program.highlights.map((highlight, i) => (
                 <motion.div
                   key={i}

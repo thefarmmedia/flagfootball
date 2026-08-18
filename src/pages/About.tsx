@@ -41,8 +41,12 @@ export default function About() {
       />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/10 to-gray-950" />
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url("/images/photos/4.png")' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/30 rounded-full px-4 py-1.5 mb-6">
