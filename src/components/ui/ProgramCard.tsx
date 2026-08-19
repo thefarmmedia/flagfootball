@@ -1,42 +1,28 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Trophy, Star, Zap, type LucideProps } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import type { Program } from '../../data/programs'
-import type { ForwardRefExoticComponent, RefAttributes } from 'react'
-
-type LucideIcon = ForwardRefExoticComponent<LucideProps & RefAttributes<SVGSVGElement>>
-
-const icons: Record<string, LucideIcon> = {
-  trophy: Trophy,
-  star: Star,
-  zap: Zap,
-}
 
 interface ProgramCardProps {
   program: Program
   index?: number
 }
 
-const colorMap: Record<string, string> = {
-  'brand-red': 'from-brand-red/20 to-transparent border-brand-red/30 hover:border-brand-red/60',
-  'brand-navy': 'from-brand-navy/30 to-transparent border-brand-navy/30 hover:border-brand-navy/60',
-  'brand-gold': 'from-brand-gold/20 to-transparent border-brand-gold/30 hover:border-brand-gold/60',
+const photoMap: Record<string, string> = {
+  'nfl-flag': '/images/photos/2.png',
+  'girls-flag': '/images/photos/1.png',
+  '7v7': '/images/photos/7.png',
 }
 
-const iconColorMap: Record<string, string> = {
-  'brand-red': 'bg-brand-red/20 text-brand-red',
-  'brand-navy': 'bg-brand-navy/40 text-blue-400',
-  'brand-gold': 'bg-brand-gold/20 text-brand-gold',
-}
-
-const badgeColorMap: Record<string, string> = {
-  'brand-red': 'bg-brand-red/20 text-brand-red border-brand-red/30',
-  'brand-navy': 'bg-brand-navy/40 text-blue-400 border-blue-800/50',
-  'brand-gold': 'bg-brand-gold/20 text-brand-gold border-brand-gold/30',
+const accentMap: Record<string, { bar: string; badge: string; badgeText: string }> = {
+  'brand-red': { bar: 'bg-brand-red', badge: 'bg-brand-red', badgeText: 'text-white' },
+  'brand-navy': { bar: 'bg-brand-navy', badge: 'bg-brand-navy', badgeText: 'text-white' },
+  'brand-gold': { bar: 'bg-brand-gold', badge: 'bg-brand-gold', badgeText: 'text-gray-900' },
 }
 
 export default function ProgramCard({ program, index = 0 }: ProgramCardProps) {
-  const Icon: LucideIcon = icons[program.icon] ?? Trophy
+  const photo = photoMap[program.id]
+  const accent = accentMap[program.color] ?? accentMap['brand-red']
 
   return (
     <motion.div
@@ -44,35 +30,52 @@ export default function ProgramCard({ program, index = 0 }: ProgramCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group"
     >
       <Link
         to={`/${program.slug}`}
-        className={`block bg-gradient-to-b ${colorMap[program.color]} bg-gray-900 border rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl group h-full`}
+        className="block relative overflow-hidden h-[420px] lg:h-[460px] bg-gray-900"
+        style={{ clipPath: 'inset(0)' }}
       >
-        <div className="flex items-start justify-between mb-5">
-          <div className={`w-12 h-12 rounded-xl ${iconColorMap[program.color]} flex items-center justify-center`}>
-            <Icon size={22} />
-          </div>
-          <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${badgeColorMap[program.color]}`}>
+        {/* Photo background */}
+        {photo && (
+          <img
+            src={photo}
+            alt={program.name}
+            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          />
+        )}
+
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20" />
+
+        {/* Accent color bar at bottom */}
+        <div className={`absolute bottom-0 left-0 right-0 h-1 ${accent.bar} z-10`} />
+
+        {/* Badge top-left */}
+        <div className="absolute top-4 left-4 z-10">
+          <span className={`${accent.badge} ${accent.badgeText} text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1`}>
             {program.gender} · Ages {program.ageRange}
           </span>
         </div>
 
-        <h3 className="text-xl font-extrabold text-white mb-2">{program.name}</h3>
-        <p className="text-sm font-semibold text-gray-400 mb-3">{program.tagline}</p>
-        <p className="text-gray-400 text-sm leading-relaxed mb-5">{program.description}</p>
-
-        <ul className="space-y-2 mb-6">
-          {program.features.slice(0, 3).map((feature) => (
-            <li key={feature} className="flex items-center gap-2 text-sm text-gray-300">
-              <div className={`w-1.5 h-1.5 rounded-full ${program.color === 'brand-gold' ? 'bg-brand-gold' : program.color === 'brand-navy' ? 'bg-blue-400' : 'bg-brand-red'}`} />
-              {feature}
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-1.5 text-sm font-semibold text-gray-300 group-hover:text-white transition-colors">
-          Learn more <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+        {/* Content bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+          <p className="text-gray-400 text-xs uppercase tracking-widest font-bold mb-1">
+            {program.tagline}
+          </p>
+          <h3 className="font-display font-black text-white uppercase tracking-tight mb-3 leading-none"
+            style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)' }}
+          >
+            {program.shortName}
+          </h3>
+          <p className="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-2">
+            {program.description}
+          </p>
+          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-white group-hover:text-brand-gold transition-colors duration-200">
+            Learn More
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
+          </div>
         </div>
       </Link>
     </motion.div>

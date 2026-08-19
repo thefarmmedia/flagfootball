@@ -20,12 +20,15 @@ export default function SectionHeader({
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.5 }}
       className={centered ? 'text-center' : ''}
     >
       {eyebrow && (
-        <div className="text-brand-red font-bold text-sm tracking-widest uppercase mb-3">
-          {eyebrow}
+        <div className={`inline-flex items-center gap-3 mb-4 ${centered ? 'justify-center' : ''}`}>
+          <div className="w-6 h-0.5 bg-brand-red shrink-0" />
+          <span className="text-brand-red font-black text-[11px] tracking-[0.25em] uppercase">
+            {eyebrow}
+          </span>
         </div>
       )}
       <h2

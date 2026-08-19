@@ -26,31 +26,45 @@ export default function CTASection({
     siteConfig.registration.sevenOnSeven
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-red-dark to-gray-950" />
-      <div className="absolute inset-0 opacity-10"
+    <section className="relative overflow-hidden py-24 lg:py-32">
+      {/* Diagonal background */}
+      <div className="absolute inset-0 bg-brand-red" />
+      <div
+        className="absolute inset-0"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px',
+          backgroundImage: `repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 20px,
+            rgba(0,0,0,0.08) 20px,
+            rgba(0,0,0,0.08) 40px
+          )`,
         }}
       />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Top slant */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gray-950"
+        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 0)' }}
+      />
+      {/* Bottom slant */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gray-950"
+        style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%, 0 100%)' }}
+      />
+      {/* Gold glow accent */}
+      <div className="absolute top-1/2 right-0 w-[600px] h-[400px] bg-brand-gold/15 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-5 text-shadow">
+          <h2 className="font-display font-black text-white uppercase tracking-tight text-shadow-xl mb-5"
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)', lineHeight: 1.0 }}
+          >
             {title}
           </h2>
-          <p className="text-lg text-red-100/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg text-red-100/80 mb-10 max-w-2xl mx-auto font-sans">
             {subtitle}
           </p>
 
@@ -58,21 +72,21 @@ export default function CTASection({
             {hasRegistration ? (
               <Link
                 to={primaryHref}
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-brand-red font-black px-8 py-4 rounded-xl transition-all duration-200 hover:scale-105 shadow-xl text-base"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-brand-red font-black uppercase tracking-widest px-8 py-4 transition-all duration-200 hover:scale-105 shadow-xl text-sm"
               >
-                {primaryLabel} <ArrowRight size={18} />
+                {primaryLabel} <ArrowRight size={16} />
               </Link>
             ) : (
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-brand-red font-black px-8 py-4 rounded-xl transition-all duration-200 hover:scale-105 shadow-xl text-base"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-brand-red font-black uppercase tracking-widest px-8 py-4 transition-all duration-200 hover:scale-105 shadow-xl text-sm"
               >
-                Get Notified When Registration Opens <ArrowRight size={18} />
+                Get Notified When Registration Opens <ArrowRight size={16} />
               </Link>
             )}
             <Link
               to={secondaryHref}
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl border border-white/30 hover:border-white/50 transition-all duration-200 text-base backdrop-blur-sm"
+              className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white font-black uppercase tracking-widest px-8 py-4 border-2 border-white/60 hover:border-white transition-all duration-200 text-sm"
             >
               {secondaryLabel}
             </Link>
