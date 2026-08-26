@@ -16,14 +16,14 @@ export default function TerriAnnouncementSection() {
             transition={{ duration: 0.6 }}
             className="order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden bg-gray-950 border border-gray-700 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden bg-gray-950 border border-gray-700 shadow-2xl flex justify-center">
               <video
                 src="/videos/terri.mp4"
                 controls
                 playsInline
                 preload="metadata"
                 poster="/images/photos/jpg/25.jpg"
-                className="w-full aspect-video object-cover"
+                className="w-auto max-w-full max-h-[75vh] object-contain"
               />
             </div>
           </motion.div>

@@ -77,14 +77,14 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 shadow-2xl flex justify-center">
                 <video
                   src="/videos/terri.mp4"
                   controls
                   playsInline
                   preload="metadata"
                   poster="/images/photos/jpg/30.jpg"
-                  className="w-full aspect-video object-cover"
+                  className="w-auto max-w-full max-h-[75vh] object-contain"
                 />
               </div>
             </motion.div>
