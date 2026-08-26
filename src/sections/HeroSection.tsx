@@ -3,20 +3,35 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, Calendar, MapPin, Clock } from 'lucide-react'
 import { siteConfig } from '../config/site'
 
-const { season, organization } = siteConfig
+const { season, organization, registration } = siteConfig
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
-      {/* Background photo */}
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/videos/highlight1.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/images/photos/jpg/3.jpg"
+        onError={(e) => {
+          const el = e.currentTarget
+          el.style.display = 'none'
+        }}
+      />
+
+      {/* Fallback photo (shown if video fails or before it loads) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url("/images/photos/3.png")' }}
       />
 
       {/* Layered dark overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/30" />
 
       {/* Subtle diagonal grid */}
@@ -139,9 +154,14 @@ export default function HeroSection() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
-          <Link to="/nfl-flag" className="btn-primary text-sm px-10 py-4 shadow-2xl shadow-brand-red/40">
+          <a
+            href={registration.nflFlag}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-sm px-10 py-4 shadow-2xl shadow-brand-red/40 inline-flex items-center gap-2"
+          >
             Register Now <ArrowRight size={16} />
-          </Link>
+          </a>
           <Link to="/about" className="btn-secondary text-sm px-10 py-4">
             Learn More
           </Link>
@@ -156,7 +176,7 @@ export default function HeroSection() {
         >
           {[
             { label: 'All Schools Welcome', color: 'border-white/20 text-gray-400' },
-            { label: 'Flags Included', color: 'border-brand-red/40 text-brand-red' },
+            { label: 'Jersey + Flags Included', color: 'border-brand-red/40 text-brand-red' },
             { label: 'Woman Owned & Operated', color: 'border-brand-gold/40 text-brand-gold' },
             { label: 'Sponsorships Open', color: 'border-purple-700/40 text-purple-300' },
           ].map((badge) => (

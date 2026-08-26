@@ -16,7 +16,7 @@ export default function CTASection({
   title = 'Ready to Join Missouri EPIC?',
   subtitle = "Registration is open now. Spots are limited — secure your athlete's place in the best flag football program in Southwest Missouri.",
   primaryLabel = 'Register Now',
-  primaryHref = '/nfl-flag',
+  primaryHref: _primaryHref = '/nfl-flag',
   secondaryLabel = 'Contact Us',
   secondaryHref = '/contact',
 }: CTASectionProps) {
@@ -70,12 +70,14 @@ export default function CTASection({
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {hasRegistration ? (
-              <Link
-                to={primaryHref}
+              <a
+                href={siteConfig.registration.nflFlag}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-brand-red font-black uppercase tracking-widest px-8 py-4 transition-all duration-200 hover:scale-105 shadow-xl text-sm"
               >
                 {primaryLabel} <ArrowRight size={16} />
-              </Link>
+              </a>
             ) : (
               <Link
                 to="/contact"

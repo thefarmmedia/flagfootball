@@ -7,28 +7,32 @@ export const siteConfig = {
   organization: {
     name: 'Missouri EPIC',
     fullName: 'Missouri EPIC Flag Football',
-    tagline: "Be the Future of Flag Football.",
-    subTagline: 'Play EPIC.',
+    tagline: 'BE EPIC.',
+    subTagline: 'PLAY EPIC. GROW EPIC.',
     description:
       'Missouri EPIC offers NFL FLAG, Girls Flag Football, and competitive 7v7 programs for youth athletes in Southwest Missouri at Ballparks of America in Branson, MO.',
     founded: '2018',
     location: 'Ballparks of America, Branson, Missouri',
     womanOwned: true,
+    owner: 'Terri Crisler',
   },
 
-  // Production domain — update when your custom domain is connected
-  // ⚠️  Do NOT hard-code a .netlify.app URL here
-  siteUrl: 'https://DOMAIN-GOES-HERE.com',
+  // Production domain
+  siteUrl: 'https://missouriepic.com',
 
-  // Registration links — update each season
+  // Registration links
   registration: {
-    nflFlag: '',
-    girlsFlag: '',
-    sevenOnSeven: '',
-    // NFL FLAG national program finder — already set
-    nflFlagFinder: 'https://play.nflflag.com/?zip=65616',
-    // Volunteer / coach applications
-    coachApplication: '',
+    nflFlag: 'https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0zMzUwLTE3OTIxNjgyMTJ8bkpmdnJFKzc5Q2ZtdUZkaVpnTDRpSFdNc0pKQm41UG9jYkgxemtwOUsrWT0=',
+    girlsFlag: 'https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0zMzUwLTE3OTIxNjgyMTJ8bkpmdnJFKzc5Q2ZtdUZkaVpnTDRpSFdNc0pKQm41UG9jYkgxemtwOUsrWT0=',
+    sevenOnSeven: 'https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0zMzUwLTE3OTIxNjgyMTJ8bkpmdnJFKzc5Q2ZtdUZkaVpnTDRpSFdNc0pKQm41UG9jYkgxemtwOUsrWT0=',
+    nflFlagFinder: 'https://share.google/aqqeNhH1RHDru4I3e',
+    coachApplication: '/contact',
+  },
+
+  // NFL FLAG Merchandise
+  merchandise: {
+    shopUrl: 'https://shop.nflflag.com/',
+    discountCode: 'MOEPICFLAG',
   },
 
   // Social media profiles
@@ -41,23 +45,24 @@ export const siteConfig = {
 
   // Contact information
   contact: {
-    phone: '',
-    email: '',
+    ownerName: 'Terri Crisler',
+    phone: '417-559-0669',
+    email: 'missouriepic@aol.com',
     address: 'Ballparks of America, Branson, Missouri',
   },
 
-  // Analytics — leave blank to disable tracking
+  // Analytics
   analytics: {
     ga4Id: '',
     metaPixelId: '',
     gscVerification: '',
   },
 
-  // Season information — update each year
+  // Season information
   season: {
     current: '2025',
     nflFlag: {
-      name: 'Fall League',
+      name: 'Fall League 2025',
       ageGroups: ['8U', '10U', '12U', '14U', '17U'],
       coedGroups: ['8U', '10U'],
       registrationOpen: true,
@@ -67,6 +72,14 @@ export const siteConfig = {
       location: 'Ballparks of America, Branson, MO',
       openToAllSchools: true,
       flagsIncluded: true,
+      jerseyIncluded: true,
+      pricing: {
+        earlyBird: 250,
+        regular: 300,
+        earlyBirdDeadline: 'September 4',
+        regularDeadline: 'September 11',
+        registrationCloses: 'September 11',
+      },
     },
     girlsFlag: {
       ageGroups: ['8U', '10U', '12U', '14U'],

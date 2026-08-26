@@ -9,9 +9,9 @@ interface ProgramCardProps {
 }
 
 const photoMap: Record<string, string> = {
-  'nfl-flag': '/images/photos/2.png',
-  'girls-flag': '/images/photos/1.png',
-  '7v7': '/images/photos/7.png',
+  'nfl-flag': '/images/photos/jpg/25.jpg',
+  'girls-flag': '/images/photos/jpg/55.jpg',
+  '7v7': '/images/photos/jpg/40.jpg',
 }
 
 const accentMap: Record<string, { bar: string; badge: string; badgeText: string }> = {

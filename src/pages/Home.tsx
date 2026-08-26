@@ -1,25 +1,41 @@
 import PageMeta from '../components/ui/PageMeta'
 import HeroSection from '../sections/HeroSection'
-import SeasonSection from '../sections/SeasonSection'
+import FallLeagueSection from '../sections/FallLeagueSection'
+import WhatsIncludedSection from '../sections/WhatsIncludedSection'
 import ProgramsSection from '../sections/ProgramsSection'
 import WhySection from '../sections/WhySection'
+import CommunitySection from '../sections/CommunitySection'
+import GallerySection from '../sections/GallerySection'
+import MerchandiseSection from '../sections/MerchandiseSection'
+import ContactBannerSection from '../sections/ContactBannerSection'
 import CTASection from '../sections/CTASection'
 
 export default function Home() {
   return (
     <>
       <PageMeta
-        title="Missouri EPIC Flag Football"
-        description="Southwest Missouri's premier flag football organization. NFL FLAG Fall League — Tuesday Nights, 9/27–11/3 at Ballparks of America, Branson, MO. Ages 8U–17U. Registration open!"
+        title="Missouri EPIC Flag Football | Branson, MO"
+        description="Southwest Missouri's premier NFL FLAG football organization. Fall League 2025 — Tuesday Nights, 9/27–11/3 at Ballparks of America, Branson, MO. Ages 8U–17U. $250 early bird. Register now!"
         path="/"
-        ogTitle="Missouri EPIC | NFL FLAG · Girls Flag · 7v7"
-        ogDescription="Be the Future of Flag Football. Play EPIC. NFL FLAG Fall League now open in Branson, MO — Tuesday Nights, 9/27–11/3, ages 8U–17U."
+        ogTitle="Missouri EPIC | BE EPIC. PLAY EPIC. GROW EPIC."
+        ogDescription="NFL FLAG Fall League 2025 now open. Tuesday Nights at Ballparks of America, Branson MO. Ages 8U–17U. $250 early bird by Sept 4."
       />
       <HeroSection />
-      <SeasonSection />
+      <FallLeagueSection />
+      <WhatsIncludedSection />
       <ProgramsSection />
       <WhySection />
-      <CTASection />
+      <CommunitySection />
+      <GallerySection />
+      <MerchandiseSection />
+      <ContactBannerSection />
+      <CTASection
+        title="Secure Your Spot Now"
+        subtitle="Early bird pricing ends September 4. Registration closes September 11. Don't miss your athlete's season."
+        primaryLabel="Register — $250 Early Bird"
+        secondaryLabel="Contact Us"
+        secondaryHref="/contact"
+      />
     </>
   )
 }

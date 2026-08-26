@@ -21,7 +21,7 @@ export default function Coaches() {
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/images/photos/6.png")' }}
+          style={{ backgroundImage: 'url("/images/photos/jpg/60.jpg")' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

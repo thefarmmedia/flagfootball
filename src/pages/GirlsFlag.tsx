@@ -26,7 +26,7 @@ export default function GirlsFlag() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url("/images/photos/1.png")',
+              'url("/images/photos/jpg/55.jpg")',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
@@ -113,7 +113,7 @@ export default function GirlsFlag() {
                 className="rounded-2xl overflow-hidden"
               >
                 <img
-                  src="/images/photos/8.png"
+                  src="/images/photos/jpg/50.jpg"
                   alt="Girls flag football action"
                   className="w-full h-64 object-cover object-center"
                 />
