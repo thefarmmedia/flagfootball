@@ -66,6 +66,96 @@ export default function About() {
         </div>
       </section>
 
+      {/* Meet Terri */}
+      <section className="py-20 lg:py-28 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Video */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 shadow-2xl">
+                <video
+                  src="/videos/highlight2.mp4"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/photos/jpg/30.jpg"
+                  className="w-full aspect-video object-cover"
+                />
+              </div>
+            </motion.div>
+
+            {/* Bio */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex flex-col justify-center"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-1 bg-brand-gold" />
+                <span className="text-brand-gold font-bold text-xs uppercase tracking-[0.25em]">Meet the Founder</span>
+              </div>
+              <h2 className="font-display font-black text-white uppercase tracking-tight mb-4"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.0 }}>
+                Terri Crisler
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                Missouri EPIC was built by Terri Crisler — a Southwest Missouri mom on a mission to bring world-class flag football to local kids. What started as a passion for youth athletics has grown into the region's most exciting flag football organization, partnered with NFL FLAG and rooted in community.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-8">
+                "This is bigger than football — we're building a community around our kids." Terri's vision drives everything at Missouri EPIC: excellence on the field, character off it, and a league where every athlete belongs.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="tel:417-559-0669"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-gold hover:opacity-80 transition-opacity"
+                >
+                  📞 417-559-0669
+                </a>
+                <a
+                  href="mailto:missouriepic@aol.com"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-gold hover:opacity-80 transition-opacity"
+                >
+                  ✉ missouriepic@aol.com
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Promotional cards / graphics */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+          >
+            {[
+              '61acd584-8564-45e1-91e0-66ded0120596.jfif',
+              '8585a9a0-c17b-4a2c-be44-18e87937e3d7.jfif',
+              'a3e86873-7d81-44c2-b53c-36a8209c999e.jfif',
+              'd488ebb4-496a-4085-a534-851903a1c015.jfif',
+              'e32938ed-daf2-4a10-9f61-c16ca2c08e78.jfif',
+            ].map((file) => (
+              <div key={file} className="rounded-xl overflow-hidden border border-gray-800 bg-gray-900">
+                <img
+                  src={`/images/photos/jpg/${file}`}
+                  alt="Missouri EPIC promotional graphic"
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* Mission */}
       <section className="py-20 lg:py-28 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
