@@ -79,7 +79,7 @@ export default function About() {
             >
               <div className="relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 shadow-2xl">
                 <video
-                  src="/videos/highlight2.mp4"
+                  src="/videos/terri.mp4"
                   controls
                   playsInline
                   preload="metadata"
@@ -128,30 +128,22 @@ export default function About() {
             </motion.div>
           </div>
 
-          {/* Promotional cards / graphics */}
+          {/* Terri's promotional card */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4"
+            className="mt-12 flex justify-center"
           >
-            {[
-              '61acd584-8564-45e1-91e0-66ded0120596.jfif',
-              '8585a9a0-c17b-4a2c-be44-18e87937e3d7.jfif',
-              'a3e86873-7d81-44c2-b53c-36a8209c999e.jfif',
-              'd488ebb4-496a-4085-a534-851903a1c015.jfif',
-              'e32938ed-daf2-4a10-9f61-c16ca2c08e78.jfif',
-            ].map((file) => (
-              <div key={file} className="rounded-xl overflow-hidden border border-gray-800 bg-gray-900">
-                <img
-                  src={`/images/photos/jpg/${file}`}
-                  alt="Missouri EPIC promotional graphic"
-                  className="w-full h-auto object-contain"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+            <div className="max-w-sm rounded-2xl overflow-hidden border border-gray-700 bg-gray-900 shadow-xl">
+              <img
+                src="/images/terri-card.jfif"
+                alt="Missouri EPIC — Terri Crisler"
+                className="w-full h-auto object-contain"
+                loading="lazy"
+              />
+            </div>
           </motion.div>
         </div>
       </section>

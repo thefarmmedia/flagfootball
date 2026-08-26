@@ -17,6 +17,11 @@ export default function Coaches() {
         ogDescription="Experienced, certified coaches dedicated to developing young athletes in Southwest Missouri."
       />
 
+      {/* Coming Soon Banner */}
+      <div className="bg-brand-gold text-gray-900 py-3 px-4 text-center font-black uppercase tracking-widest text-sm">
+        🏈 Coaching Staff Profiles Coming Soon — Check Back Before the Season!
+      </div>
+
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
         <div

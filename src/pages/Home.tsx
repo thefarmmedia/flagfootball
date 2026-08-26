@@ -1,11 +1,12 @@
 import PageMeta from '../components/ui/PageMeta'
 import HeroSection from '../sections/HeroSection'
+import TerriAnnouncementSection from '../sections/TerriAnnouncementSection'
+import GallerySection from '../sections/GallerySection'
 import FallLeagueSection from '../sections/FallLeagueSection'
 import WhatsIncludedSection from '../sections/WhatsIncludedSection'
 import ProgramsSection from '../sections/ProgramsSection'
 import WhySection from '../sections/WhySection'
 import CommunitySection from '../sections/CommunitySection'
-import GallerySection from '../sections/GallerySection'
 import MerchandiseSection from '../sections/MerchandiseSection'
 import ContactBannerSection from '../sections/ContactBannerSection'
 import CTASection from '../sections/CTASection'
@@ -21,12 +22,13 @@ export default function Home() {
         ogDescription="NFL FLAG Fall League 2025 now open. Tuesday Nights at Ballparks of America, Branson MO. Ages 8U–17U. $250 early bird by Sept 4."
       />
       <HeroSection />
+      <TerriAnnouncementSection />
+      <GallerySection />
       <FallLeagueSection />
       <WhatsIncludedSection />
       <ProgramsSection />
       <WhySection />
       <CommunitySection />
-      <GallerySection />
       <MerchandiseSection />
       <ContactBannerSection />
       <CTASection

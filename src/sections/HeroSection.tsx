@@ -27,7 +27,7 @@ export default function HeroSection() {
       {/* Fallback photo (shown if video fails or before it loads) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/images/photos/3.png")' }}
+        style={{ backgroundImage: 'url("/images/photos/jpg/3.jpg")' }}
       />
 
       {/* Layered dark overlays */}
