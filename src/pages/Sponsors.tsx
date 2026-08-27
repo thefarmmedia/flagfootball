@@ -148,7 +148,7 @@ export default function Sponsors() {
                   className="group bg-gray-900 border border-gray-800 hover:border-brand-gold/40 rounded-2xl overflow-hidden transition-colors duration-300 flex flex-col"
                 >
                   {/* Logo area */}
-                  <div className="flex-1 flex items-center justify-center p-8 bg-white rounded-t-2xl min-h-[180px]">
+                  <div className={`flex-1 flex items-center justify-center p-8 ${sponsor.logoBg ?? 'bg-white'} rounded-t-2xl min-h-[180px]`}>
                     {sponsor.logo ? (
                       <img
                         src={sponsor.logo}

@@ -5,6 +5,7 @@ export interface Sponsor {
   website?: string
   logo?: string
   description?: string
+  logoBg?: string
 }
 
 export const sponsors: Sponsor[] = [
@@ -14,6 +15,7 @@ export const sponsors: Sponsor[] = [
     tier: 'gold',
     website: 'https://carrexcavatinglandscaping.com/',
     logo: '/images/sponsors/carr-excavating.png',
+    logoBg: 'bg-gray-100',
   },
   {
     id: 'crazy-craigs',
@@ -21,6 +23,7 @@ export const sponsors: Sponsor[] = [
     tier: 'gold',
     website: '',
     logo: '/images/sponsors/crazy-craigs.png',
+    logoBg: 'bg-gray-900',
   },
   {
     id: 'jerrys-heating-cooling',
@@ -35,6 +38,7 @@ export const sponsors: Sponsor[] = [
     tier: 'gold',
     website: 'https://grandvillageshops.com/shops/specialty/jocks-and-socks',
     logo: '/images/sponsors/jocks-and-socks.png',
+    logoBg: 'bg-gray-900',
   },
   {
     id: 'ozarks-concrete-coatings',
