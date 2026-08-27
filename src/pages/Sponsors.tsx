@@ -150,12 +150,14 @@ export default function Sponsors() {
                   {/* Logo area */}
                   <div className="flex-1 flex items-center justify-center p-8 min-h-[180px]">
                     {sponsor.logo ? (
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="max-h-36 max-w-full w-auto object-contain"
-                        loading="lazy"
-                      />
+                      <div className={sponsor.logoBg ? `${sponsor.logoBg} rounded-xl p-5` : ''}>
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          className="max-h-32 max-w-full w-auto object-contain"
+                          loading="lazy"
+                        />
+                      </div>
                     ) : (
                       <span className="text-gray-700 font-bold text-xl text-center">{sponsor.name}</span>
                     )}

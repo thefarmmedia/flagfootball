@@ -23,7 +23,6 @@ export const sponsors: Sponsor[] = [
     tier: 'gold',
     website: '',
     logo: '/images/sponsors/crazy-craigs.png',
-    logoBg: 'bg-gray-900',
   },
   {
     id: 'jerrys-heating-cooling',
