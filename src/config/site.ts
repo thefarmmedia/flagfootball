@@ -60,9 +60,9 @@ export const siteConfig = {
 
   // Season information
   season: {
-    current: '2025',
+    current: '2026',
     nflFlag: {
-      name: 'Fall League 2025',
+      name: 'Fall League 2026',
       ageGroups: ['8U', '10U', '12U', '14U', '17U'],
       coedGroups: ['8U', '10U'],
       registrationOpen: true,

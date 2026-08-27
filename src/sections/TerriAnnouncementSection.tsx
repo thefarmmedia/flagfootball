@@ -46,7 +46,7 @@ export default function TerriAnnouncementSection() {
               <span className="text-brand-gold">from Terri</span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Hear directly from Terri Crisler — founder of Missouri EPIC — with an important announcement about Fall League 2025 and what makes this season special for Southwest Missouri families.
+              Hear directly from Terri Crisler — founder of Missouri EPIC — with an important announcement about Fall League 2026 and what makes this season special for Southwest Missouri families.
             </p>
             <p className="text-gray-400 leading-relaxed mb-8 italic">
               "This is bigger than football — we're building a community around our kids."

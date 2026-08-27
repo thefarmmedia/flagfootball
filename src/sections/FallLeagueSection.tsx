@@ -40,7 +40,7 @@ export default function FallLeagueSection() {
             <h2 className="font-display font-black text-white uppercase tracking-tight mb-4"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.0 }}>
               Fall League<br />
-              <span className="text-brand-gold">2025</span>
+              <span className="text-brand-gold">2026</span>
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
               Join Missouri EPIC's Fall NFL FLAG League — six weeks of Tuesday Night football at the premier Ballparks of America complex in Branson. Every player receives an official NFL FLAG jersey and flag belt included with registration.
