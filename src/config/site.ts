@@ -67,7 +67,7 @@ export const siteConfig = {
       coedGroups: ['8U', '10U'],
       registrationOpen: true,
       gameDay: 'Tuesday Nights',
-      dates: '9/27 – 11/3',
+      dates: '9/29 – 11/3',
       weeks: '6 Weeks of Game Time',
       location: 'Ballparks of America, Branson, MO',
       openToAllSchools: true,

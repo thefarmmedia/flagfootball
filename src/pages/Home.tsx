@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <PageMeta
         title="Missouri EPIC Flag Football | Branson, MO"
-        description="Southwest Missouri's premier NFL FLAG football organization. Fall League 2026 — Tuesday Nights, 9/27–11/3 at Ballparks of America, Branson, MO. Ages 8U–17U. $250 early bird. Register now!"
+        description="Southwest Missouri's premier NFL FLAG football organization. Fall League 2026 — Tuesday Nights, 9/29–11/3 at Ballparks of America, Branson, MO. Ages 8U–17U. $250 early bird. Register now!"
         path="/"
         ogTitle="Missouri EPIC | BE EPIC. PLAY EPIC. GROW EPIC."
         ogDescription="NFL FLAG Fall League 2026 now open. Tuesday Nights at Ballparks of America, Branson MO. Ages 8U–17U. $250 early bird by Sept 4."
