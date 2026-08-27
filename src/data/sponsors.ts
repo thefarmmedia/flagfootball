@@ -30,7 +30,7 @@ export const sponsors: Sponsor[] = [
     name: "Jerry's Heating & Cooling",
     tier: 'gold',
     website: 'https://jerrysheatcool.com/',
-    logo: '/images/sponsors/jerrys-heating-cooling.jpg',
+    logo: '/images/sponsors/jerrys-heating-cooling.png',
   },
   {
     id: 'jocks-and-socks',
