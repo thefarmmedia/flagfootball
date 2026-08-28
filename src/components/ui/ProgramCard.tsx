@@ -10,7 +10,7 @@ interface ProgramCardProps {
 
 const photoMap: Record<string, string> = {
   'nfl-flag': '/images/photos/jpg/25.jpg',
-  'girls-flag': '/images/photos/jpg/55.jpg',
+  'girls-flag': '/images/photos/jpg/63.jpg',
   '7v7': '/images/photos/jpg/40.jpg',
 }
 
