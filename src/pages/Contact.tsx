@@ -48,7 +48,7 @@ export default function Contact() {
         ...form,
       })
 
-      const [res] = await Promise.all([
+      const [netlifyResult, webhookResult] = await Promise.allSettled([
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -58,16 +58,28 @@ export default function Contact() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ formType: currentForm.label, ...form }),
-        }).catch((webhookErr) => {
-          console.error('[Contact] lead webhook failed:', webhookErr)
-          return null
         }),
       ])
 
-      if (!res.ok) {
-        const bodyText = await res.text().catch(() => '(no body)')
-        console.error('[Contact] Netlify form submit failed:', res.status, res.statusText, bodyText)
-        throw new Error(`Netlify form submit failed: ${res.status}`)
+      const netlifyOk = netlifyResult.status === 'fulfilled' && netlifyResult.value.ok
+      const webhookOk = webhookResult.status === 'fulfilled' && webhookResult.value.ok
+
+      if (!netlifyOk) {
+        console.error(
+          '[Contact] Netlify form submit failed:',
+          netlifyResult.status === 'rejected' ? netlifyResult.reason : netlifyResult.value.status,
+        )
+      }
+      if (!webhookOk) {
+        console.error(
+          '[Contact] lead webhook failed:',
+          webhookResult.status === 'rejected' ? webhookResult.reason : webhookResult.value.status,
+        )
+      }
+
+      // The lead webhook is the primary capture path — treat either succeeding as success.
+      if (!netlifyOk && !webhookOk) {
+        throw new Error('Both form submission and lead webhook failed')
       }
 
       setStatus('success')
