@@ -53,6 +53,7 @@ export const sponsors: Sponsor[] = [
     tier: 'gold',
     website: 'https://www.ontheballsportsstore.com/',
     logo: '/images/sponsors/on-the-ball-sports.webp',
+    logoBg: 'bg-gray-100',
   },
   {
     id: 'the-farm-media',

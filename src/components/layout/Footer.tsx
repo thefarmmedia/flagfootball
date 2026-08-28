@@ -161,6 +161,14 @@ export default function Footer() {
           <p className="text-gray-800 text-xs">
             NFL FLAG® is a registered trademark of NFL Properties LLC.
           </p>
+          <a
+            href="https://thefarmmedia.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-brand-gold text-xs transition-colors"
+          >
+            Site by The Farm Media
+          </a>
         </div>
       </div>
     </footer>
