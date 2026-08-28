@@ -1,26 +1,19 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { User, Award } from 'lucide-react'
+import { BookOpen, HandHeart, CalendarClock, ExternalLink } from 'lucide-react'
 import PageMeta from '../components/ui/PageMeta'
-import SectionHeader from '../components/ui/SectionHeader'
 import CTASection from '../sections/CTASection'
-import { coaches } from '../data/coaches'
 
 export default function Coaches() {
   return (
     <>
       <PageMeta
-        title="Our Coaches"
-        description="Meet the Missouri EPIC coaching staff — experienced, certified coaches dedicated to developing young athletes in NFL FLAG, Girls Flag Football, and 7v7."
+        title="Coaches"
+        description="Missouri EPIC coaches resources — official NFL FLAG rule book, volunteer sign up, and info on our upcoming coaches & officials meeting."
         path="/coaches"
-        ogTitle="Meet Our Coaches | Missouri EPIC"
-        ogDescription="Experienced, certified coaches dedicated to developing young athletes in Southwest Missouri."
+        ogTitle="Coaches | Missouri EPIC"
+        ogDescription="Rule book, volunteer sign up, and coaches & officials meeting info for Missouri EPIC Flag Football."
       />
-
-      {/* Coming Soon Banner */}
-      <div className="bg-brand-gold text-gray-900 py-3 px-4 text-center font-black uppercase tracking-widest text-sm">
-        🏈 Coaching Staff Profiles Coming Soon — Check Back Before the Season!
-      </div>
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
@@ -32,99 +25,86 @@ export default function Coaches() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight mb-6">
-              Meet Our
-              <br />
-              <span className="text-brand-red">Coaching Staff</span>
+              Coaches &<br />
+              <span className="text-brand-red">Officials</span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Our coaches bring football expertise and a passion for youth development. They're more than coaches — they're mentors who invest in every athlete.
+              Everything our coaches and volunteers need — rules, sign up, and season meeting details.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Coaches Grid */}
-      <section className="py-16 lg:py-24 bg-gray-950">
+      {/* Coaches/Officials Meeting Notice */}
+      <section className="py-16 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {coaches.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {coaches.map((coach, i) => (
-                <motion.div
-                  key={coach.id}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden"
-                >
-                  {/* Coach Image or Placeholder */}
-                  <div className="bg-gradient-to-br from-gray-800 to-gray-900 aspect-square flex items-center justify-center">
-                    {coach.image ? (
-                      <img
-                        src={coach.image}
-                        alt={coach.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center gap-3 text-gray-700">
-                        <User size={48} />
-                        <span className="text-xs font-semibold tracking-wider">PHOTO COMING SOON</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="p-6">
-                    <div className="text-xs font-bold text-brand-red tracking-widest uppercase mb-1">
-                      {coach.program}
-                    </div>
-                    <h3 className="text-xl font-extrabold text-white mb-0.5">{coach.name}</h3>
-                    <p className="text-gray-400 text-sm mb-3">{coach.title}</p>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{coach.bio}</p>
-                    {coach.certifications && coach.certifications.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {coach.certifications.map((cert) => (
-                          <span
-                            key={cert}
-                            className="inline-flex items-center gap-1 text-xs bg-brand-red/10 text-brand-red border border-brand-red/20 rounded-full px-2.5 py-1"
-                          >
-                            <Award size={10} />
-                            {cert}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+          <div className="bg-brand-navy/20 border border-brand-navy/40 rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6">
+            <div className="w-14 h-14 rounded-full bg-brand-gold/10 flex items-center justify-center shrink-0">
+              <CalendarClock size={28} className="text-brand-gold" />
             </div>
-          ) : (
-            <div className="text-center py-20">
-              <div className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-6">
-                <User size={32} className="text-gray-600" />
+            <div>
+              <div className="text-xs font-bold text-brand-gold tracking-widest uppercase mb-1">
+                Mark Your Calendar
               </div>
-              <h2 className="text-2xl font-bold text-white mb-3">Coaching Staff Coming Soon</h2>
-              <p className="text-gray-400 max-w-md mx-auto">
-                We're assembling an incredible coaching staff. Check back soon or contact us to learn more about our coaches.
+              <h2 className="text-2xl font-black text-white uppercase tracking-tight mb-2">
+                Coaches & Officials Meeting — September
+              </h2>
+              <p className="text-gray-300">
+                We'll be hosting a coaches and officials meeting in September ahead of Fall League 2026. Date, time, and location are TBD — check back here or contact us for updates.
               </p>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* Volunteer CTA */}
-      <section className="py-16 bg-gray-900/50 border-y border-gray-800">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionHeader
-            eyebrow="Join the Team"
-            title="Interested in Coaching?"
-            subtitle="We're always looking for passionate coaches and volunteers. Football experience is helpful but not required — we'll train you."
-            centered
-          />
-          <div className="mt-8">
-            <Link to="/contact" className="btn-primary">
-              Apply to Coach
-            </Link>
+      {/* Rule Book + Volunteer */}
+      <section className="py-4 pb-16 lg:pb-24 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* Rule Book */}
+            <motion.a
+              href="https://nflflag.com/coaches/flag-football-rules"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group bg-gray-900 border border-gray-800 hover:border-brand-red/40 rounded-2xl p-8 transition-colors duration-300"
+            >
+              <div className="w-14 h-14 rounded-full bg-brand-red/10 flex items-center justify-center mb-5">
+                <BookOpen size={26} className="text-brand-red" />
+              </div>
+              <h3 className="text-xl font-extrabold text-white mb-2">NFL FLAG Rule Book</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Review the official NFL FLAG football rules covering gameplay, safety, and league guidelines.
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red uppercase tracking-widest group-hover:text-red-400 transition-colors">
+                View Rule Book <ExternalLink size={12} />
+              </span>
+            </motion.a>
+
+            {/* Volunteer Sign Up */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.08 }}
+              className="bg-gray-900 border border-gray-800 hover:border-brand-gold/40 rounded-2xl p-8 transition-colors duration-300"
+            >
+              <div className="w-14 h-14 rounded-full bg-brand-gold/10 flex items-center justify-center mb-5">
+                <HandHeart size={26} className="text-brand-gold" />
+              </div>
+              <h3 className="text-xl font-extrabold text-white mb-2">Volunteer Sign Up</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Interested in coaching or officiating? Football experience is helpful but not required — we'll train you.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-gold uppercase tracking-widest hover:text-yellow-400 transition-colors"
+              >
+                Sign Up to Volunteer <ExternalLink size={12} />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
