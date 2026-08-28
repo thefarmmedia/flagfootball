@@ -48,11 +48,18 @@ export default function Contact() {
         ...form,
       })
 
-      const res = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
-      })
+      const [res] = await Promise.all([
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString(),
+        }),
+        fetch(siteConfig.integrations.leadWebhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ formType: currentForm.label, ...form }),
+        }).catch(() => null),
+      ])
 
       if (!res.ok) throw new Error('Network response was not ok')
 

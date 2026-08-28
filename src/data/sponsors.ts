@@ -58,7 +58,7 @@ export const sponsors: Sponsor[] = [
     id: 'the-farm-media',
     name: 'The Farm Media',
     tier: 'gold',
-    website: '',
+    website: 'https://thefarmmedia.com',
     logo: '/images/sponsors/the-farm-media.png',
     logoBg: 'bg-gray-100',
   },

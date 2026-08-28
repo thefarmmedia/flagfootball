@@ -51,6 +51,12 @@ export const siteConfig = {
     address: 'Ballparks of America, Branson, Missouri',
   },
 
+  // Third-party integrations
+  integrations: {
+    leadWebhookUrl:
+      'https://services.leadconnectorhq.com/hooks/qqwYX3OhtMdj6AoCfpXC/webhook-trigger/59027fa9-89c8-4d57-99c7-aab560b1a84f',
+  },
+
   // Analytics
   analytics: {
     ga4Id: '',
