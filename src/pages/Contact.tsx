@@ -58,10 +58,17 @@ export default function Contact() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ formType: currentForm.label, ...form }),
-        }).catch(() => null),
+        }).catch((webhookErr) => {
+          console.error('[Contact] lead webhook failed:', webhookErr)
+          return null
+        }),
       ])
 
-      if (!res.ok) throw new Error('Network response was not ok')
+      if (!res.ok) {
+        const bodyText = await res.text().catch(() => '(no body)')
+        console.error('[Contact] Netlify form submit failed:', res.status, res.statusText, bodyText)
+        throw new Error(`Netlify form submit failed: ${res.status}`)
+      }
 
       setStatus('success')
 
@@ -75,7 +82,8 @@ export default function Contact() {
       }
       trackEvent(eventMap[activeForm])
       setForm(defaultForm)
-    } catch {
+    } catch (err) {
+      console.error('[Contact] submit error:', err)
       setStatus('error')
       setErrorMsg('Something went wrong. Please try again or email us directly.')
     }
