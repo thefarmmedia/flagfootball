@@ -18,6 +18,14 @@ export const sponsors: Sponsor[] = [
     logoBg: 'bg-gray-100',
   },
   {
+    id: 'branson-globe',
+    name: 'Branson Globe',
+    tier: 'gold',
+    website: 'https://bransonglobe.com/',
+    logo: '/images/sponsors/branson-globe.webp',
+    description: 'Your Community. Your News.',
+  },
+  {
     id: 'crazy-craigs',
     name: "Crazy Craig's",
     tier: 'gold',
