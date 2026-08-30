@@ -14,7 +14,7 @@ export const sponsors: Sponsor[] = [
     name: 'Carr Excavating',
     tier: 'gold',
     website: 'https://carrexcavatinglandscaping.com/',
-    logo: '/images/sponsors/carr-excavating.png',
+    logo: '/images/sponsors/carr-excavating.webp',
     logoBg: 'bg-gray-100',
   },
   {
@@ -22,14 +22,14 @@ export const sponsors: Sponsor[] = [
     name: "Crazy Craig's",
     tier: 'gold',
     website: '',
-    logo: '/images/sponsors/crazy-craigs.png',
+    logo: '/images/sponsors/crazy-craigs.webp',
   },
   {
     id: 'jerrys-heating-cooling',
     name: "Jerry's Heating & Cooling",
     tier: 'gold',
     website: 'https://jerrysheatcool.com/',
-    logo: '/images/sponsors/jerrys-heating-cooling-v2.png',
+    logo: '/images/sponsors/jerrys-heating-cooling-v2.webp',
     logoBg: 'bg-gray-100',
   },
   {
@@ -37,7 +37,7 @@ export const sponsors: Sponsor[] = [
     name: 'Jocks and Socks',
     tier: 'gold',
     website: 'https://grandvillageshops.com/shops/specialty/jocks-and-socks',
-    logo: '/images/sponsors/jocks-and-socks.png',
+    logo: '/images/sponsors/jocks-and-socks.webp',
     logoBg: 'bg-gray-900',
   },
   {
@@ -45,7 +45,7 @@ export const sponsors: Sponsor[] = [
     name: 'Ozarks Concrete Coatings',
     tier: 'gold',
     website: 'https://ozarksconcretecoatings.com',
-    logo: '/images/sponsors/logo-with-number.png',
+    logo: '/images/sponsors/logo-with-number.webp',
   },
   {
     id: 'on-the-ball-sports',
@@ -60,7 +60,7 @@ export const sponsors: Sponsor[] = [
     name: 'The Farm Media',
     tier: 'gold',
     website: 'https://thefarmmedia.com',
-    logo: '/images/sponsors/the-farm-media.png',
+    logo: '/images/sponsors/the-farm-media.webp',
     logoBg: 'bg-gray-100',
   },
 ]

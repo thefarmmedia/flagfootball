@@ -154,8 +154,11 @@ export default function Sponsors() {
                         <img
                           src={sponsor.logo}
                           alt={sponsor.name}
+                          width="1000"
+                          height="1000"
                           className="max-h-32 max-w-full w-auto object-contain"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     ) : (

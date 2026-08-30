@@ -9,9 +9,9 @@ interface ProgramCardProps {
 }
 
 const photoMap: Record<string, string> = {
-  'nfl-flag': '/images/photos/jpg/25.jpg',
-  'girls-flag': '/images/photos/jpg/63.jpg',
-  '7v7': '/images/photos/jpg/40.jpg',
+  'nfl-flag': '/images/photos/jpg/25.webp',
+  'girls-flag': '/images/photos/jpg/63.webp',
+  '7v7': '/images/photos/jpg/40.webp',
 }
 
 const accentMap: Record<string, { bar: string; badge: string; badgeText: string }> = {
@@ -42,6 +42,10 @@ export default function ProgramCard({ program, index = 0 }: ProgramCardProps) {
           <img
             src={photo}
             alt={program.name}
+            width="1280"
+            height="1280"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
         )}

@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, Play } from 'lucide-react'
 
 const galleryPhotos = [
-  '/images/photos/jpg/1.jpg',
-  '/images/photos/jpg/8.jpg',
-  '/images/photos/jpg/14.jpg',
-  '/images/photos/jpg/18.jpg',
-  '/images/photos/jpg/22.jpg',
-  '/images/photos/jpg/28.jpg',
-  '/images/photos/jpg/33.jpg',
-  '/images/photos/jpg/38.jpg',
-  '/images/photos/jpg/42.jpg',
-  '/images/photos/jpg/48.jpg',
-  '/images/photos/jpg/53.jpg',
-  '/images/photos/jpg/58.jpg',
+  '/images/photos/jpg/1.webp',
+  '/images/photos/jpg/8.webp',
+  '/images/photos/jpg/14.webp',
+  '/images/photos/jpg/18.webp',
+  '/images/photos/jpg/22.webp',
+  '/images/photos/jpg/28.webp',
+  '/images/photos/jpg/33.webp',
+  '/images/photos/jpg/38.webp',
+  '/images/photos/jpg/42.webp',
+  '/images/photos/jpg/48.webp',
+  '/images/photos/jpg/53.webp',
+  '/images/photos/jpg/58.webp',
 ]
 
 export default function GallerySection() {
@@ -40,14 +40,14 @@ export default function GallerySection() {
         {/* Video highlight block */}
         <div className="relative mb-10 rounded-2xl overflow-hidden aspect-video bg-black group cursor-pointer"
           onClick={() => setShowVideo(true)}>
-          <video
-            src="/videos/highlight2.mp4"
+          <img
+            src="/images/photos/jpg/10.webp"
+            alt="Missouri EPIC highlight video"
+            width="1280"
+            height="1280"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-            muted
-            loop
-            autoPlay
-            playsInline
-            poster="/images/photos/jpg/10.jpg"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
             <div className="w-20 h-20 rounded-full bg-brand-red/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl">
@@ -74,8 +74,11 @@ export default function GallerySection() {
               <img
                 src={src}
                 alt={`Flag football action ${i + 1}`}
+                width="1280"
+                height="1280"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
             </motion.div>
           ))}
@@ -98,6 +101,8 @@ export default function GallerySection() {
             <img
               src={lightbox}
               alt="Flag football"
+              width="1280"
+              height="1280"
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />

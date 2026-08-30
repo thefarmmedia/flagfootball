@@ -19,7 +19,7 @@ export default function FallLeagueSection() {
       {/* background photo accent */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10"
-        style={{ backgroundImage: 'url("/images/photos/jpg/25.jpg")' }}
+        style={{ backgroundImage: 'url("/images/photos/jpg/25.webp")' }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/95 to-gray-900/80" />
 
@@ -106,10 +106,13 @@ export default function FallLeagueSection() {
           {[10, 20, 30, 40, 50].map((n) => (
             <div key={n} className="aspect-square overflow-hidden">
               <img
-                src={`/images/photos/jpg/${n}.jpg`}
+                src={`/images/photos/jpg/${n}.webp`}
                 alt="Flag football action"
+                width="1280"
+                height="1280"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}

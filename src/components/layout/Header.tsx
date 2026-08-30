@@ -50,8 +50,11 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group shrink-0" onClick={() => setMenuOpen(false)}>
               <img
-                src="/images/logos/missouri-epic-logo.png"
+                src="/images/logos/missouri-epic-logo.webp"
                 alt={`${siteConfig.organization.name} Logo`}
+                width="1000"
+                height="1000"
+                decoding="async"
                 className="h-9 lg:h-11 w-auto object-contain group-hover:opacity-90 transition-opacity"
               />
               <div className="hidden sm:block border-l border-gray-700 pl-3">

@@ -27,7 +27,7 @@ export default function NFLFlag() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url("/images/photos/jpg/10.jpg")',
+              'url("/images/photos/jpg/10.webp")',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
@@ -172,8 +172,12 @@ export default function NFLFlag() {
                 className="rounded-2xl overflow-hidden"
               >
                 <img
-                  src="/images/photos/jpg/5.jpg"
+                  src="/images/photos/jpg/5.webp"
                   alt="Flag football action"
+                  width="1280"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-64 object-cover object-center"
                 />
               </motion.div>

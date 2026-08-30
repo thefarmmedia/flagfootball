@@ -94,10 +94,13 @@ export default function WhatsIncludedSection() {
             {[5, 15, 35, 45].map((n) => (
               <div key={n} className="aspect-[4/3] overflow-hidden rounded-xl">
                 <img
-                  src={`/images/photos/jpg/${n}.jpg`}
+                  src={`/images/photos/jpg/${n}.webp`}
                   alt="Flag football"
+                  width="1280"
+                  height="1280"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}

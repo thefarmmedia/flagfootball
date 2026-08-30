@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, Calendar, MapPin, Clock } from 'lucide-react'
@@ -6,29 +7,45 @@ import { siteConfig } from '../config/site'
 const { season, organization, registration } = siteConfig
 
 export default function HeroSection() {
+  const [loadVideo, setLoadVideo] = useState(false)
+
+  useEffect(() => {
+    const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection
+    const shouldLoad = window.matchMedia('(min-width: 1024px)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      && !connection?.saveData
+
+    if (!shouldLoad) return
+
+    const timer = window.setTimeout(() => setLoadVideo(true), 4000)
+    return () => window.clearTimeout(timer)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
-      {/* Background video */}
-      <video
+      {/* Fast, high-priority hero image. Video is deferred on desktop and skipped on mobile. */}
+      <img
+        src="/images/photos/jpg/3.webp"
+        alt=""
+        width="1280"
+        height="1280"
+        fetchPriority="high"
+        decoding="sync"
         className="absolute inset-0 w-full h-full object-cover"
-        src="/videos/highlight1.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        poster="/images/photos/jpg/3.jpg"
-        onError={(e) => {
-          const el = e.currentTarget
-          el.style.display = 'none'
-        }}
       />
-
-      {/* Fallback photo (shown if video fails or before it loads) */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/images/photos/jpg/3.jpg")' }}
-      />
+      {loadVideo && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/highlight1.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          onError={(e) => { e.currentTarget.style.display = 'none' }}
+        />
+      )}
 
       {/* Layered dark overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
@@ -59,8 +76,12 @@ export default function HeroSection() {
           className="mb-6 flex justify-center"
         >
           <img
-            src="/images/logos/missouri-epic-logo.png"
+            src="/images/logos/missouri-epic-logo.webp"
             alt="Missouri EPIC NFL FLAG"
+            width="1000"
+            height="1000"
+            fetchPriority="high"
+            decoding="async"
             className="h-56 sm:h-72 lg:h-96 w-auto object-contain drop-shadow-2xl"
           />
         </motion.div>

@@ -21,8 +21,8 @@ export default function TerriAnnouncementSection() {
                 src="/videos/terri.mp4"
                 controls
                 playsInline
-                preload="metadata"
-                poster="/images/photos/jpg/25.jpg"
+                preload="none"
+                poster="/images/photos/jpg/25.webp"
                 className="w-auto max-w-full max-h-[75vh] object-contain"
               />
             </div>

@@ -14,8 +14,12 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-center gap-3 mb-5 group">
               <img
-                src="/images/logos/missouri-epic-logo.png"
+                src="/images/logos/missouri-epic-logo.webp"
                 alt={`${organization.name} Logo`}
+                width="1000"
+                height="1000"
+                loading="lazy"
+                decoding="async"
                 className="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity"
               />
             </Link>

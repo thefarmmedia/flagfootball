@@ -12,7 +12,7 @@ const pillars = [
     ctaHref: '/nfl-flag',
     color: 'border-brand-red/50',
     accent: 'text-brand-red',
-    photo: '/images/photos/jpg/60.jpg',
+    photo: '/images/photos/jpg/60.webp',
   },
   {
     icon: Award,
@@ -23,7 +23,7 @@ const pillars = [
     ctaHref: '/contact',
     color: 'border-brand-gold/50',
     accent: 'text-brand-gold',
-    photo: '/images/photos/jpg/65.jpg',
+    photo: '/images/photos/jpg/65.webp',
   },
   {
     icon: Flag,
@@ -34,7 +34,7 @@ const pillars = [
     ctaHref: '/contact',
     color: 'border-blue-600/50',
     accent: 'text-blue-400',
-    photo: '/images/photos/jpg/70.jpg',
+    photo: '/images/photos/jpg/70.webp',
   },
 ]
 
@@ -78,8 +78,11 @@ export default function CommunitySection() {
                 <img
                   src={pillar.photo}
                   alt={pillar.title}
+                  width="1280"
+                  height="1280"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
                 <div className="absolute bottom-4 left-4 flex items-center gap-2">

@@ -18,4 +18,4 @@ export function buildCanonical(path: string): string {
   return `${base}${path}`
 }
 
-export const defaultOgImage = '/images/logos/missouri-epic-logo.png'
+export const defaultOgImage = '/images/logos/missouri-epic-logo.webp'

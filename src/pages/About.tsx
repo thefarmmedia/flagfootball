@@ -44,7 +44,7 @@ export default function About() {
       <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("/images/photos/jpg/30.jpg")' }}
+          style={{ backgroundImage: 'url("/images/photos/jpg/30.webp")' }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/80 to-gray-950/50" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,8 +82,8 @@ export default function About() {
                   src="/videos/terri.mp4"
                   controls
                   playsInline
-                  preload="metadata"
-                  poster="/images/photos/jpg/30.jpg"
+                  preload="none"
+                  poster="/images/photos/jpg/30.webp"
                   className="w-auto max-w-full max-h-[75vh] object-contain"
                 />
               </div>
@@ -138,10 +138,13 @@ export default function About() {
           >
             <div className="max-w-sm rounded-2xl overflow-hidden border border-gray-700 bg-gray-900 shadow-xl">
               <img
-                src="/images/terri-card.jfif"
+                src="/images/terri-card.webp"
                 alt="Missouri EPIC — Terri Crisler"
+                width="1080"
+                height="1350"
                 className="w-full h-auto object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </motion.div>
@@ -183,8 +186,12 @@ export default function About() {
               className="bg-gray-900 border border-gray-800 rounded-2xl p-8"
             >
               <img
-                src="/images/logos/missouri-epic-logo.png"
+                src="/images/logos/missouri-epic-logo.webp"
                 alt="Missouri EPIC"
+                width="1000"
+                height="1000"
+                loading="lazy"
+                decoding="async"
                 className="w-48 mx-auto mb-8 opacity-90"
               />
               <div className="grid grid-cols-2 gap-6">

@@ -64,10 +64,13 @@ export default function MerchandiseSection() {
             {[6, 16, 26, 36].map((n) => (
               <div key={n} className="aspect-square overflow-hidden rounded-xl">
                 <img
-                  src={`/images/photos/jpg/${n}.jpg`}
+                  src={`/images/photos/jpg/${n}.webp`}
                   alt="NFL FLAG gear"
+                  width="1280"
+                  height="1280"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
