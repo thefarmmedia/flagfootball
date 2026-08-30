@@ -14,7 +14,7 @@ export const sponsors: Sponsor[] = [
     name: 'Carr Excavating',
     tier: 'gold',
     website: 'https://carrexcavatinglandscaping.com/',
-    logo: '/images/sponsors/carr-excavating.webp',
+    logo: '/images/sponsors/carr-excavating.png',
     logoBg: 'bg-gray-100',
   },
   {
