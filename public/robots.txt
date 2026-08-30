@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://missouriepic.com/sitemap-pages.xml
+Sitemap: https://missouriepic.com/sitemap.txt
