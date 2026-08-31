@@ -26,7 +26,7 @@ export default function HalloweenTournamentBanner() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold uppercase tracking-wider text-gray-200">
-              <span className="inline-flex items-center gap-2"><CalendarDays size={17} className="text-orange-400" /> Friday, October 31</span>
+              <span className="inline-flex items-center gap-2"><CalendarDays size={17} className="text-orange-400" /> October 31</span>
               <span className="inline-flex items-center gap-2"><MapPin size={17} className="text-lime-400" /> Ballparks of America — Branson, MO</span>
             </div>
           </div>
