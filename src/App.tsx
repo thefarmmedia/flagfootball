@@ -6,6 +6,7 @@ const Home = lazy(() => import('./pages/Home'))
 const NFLFlag = lazy(() => import('./pages/NFLFlag'))
 const GirlsFlag = lazy(() => import('./pages/GirlsFlag'))
 const SevenOnSeven = lazy(() => import('./pages/SevenOnSeven'))
+const Tournaments = lazy(() => import('./pages/Tournaments'))
 const About = lazy(() => import('./pages/About'))
 const Coaches = lazy(() => import('./pages/Coaches'))
 const Sponsors = lazy(() => import('./pages/Sponsors'))
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/nfl-flag" element={<NFLFlag />} />
             <Route path="/girls-flag-football" element={<GirlsFlag />} />
             <Route path="/7v7" element={<SevenOnSeven />} />
+            <Route path="/tournaments" element={<Tournaments />} />
             <Route path="/about" element={<About />} />
             <Route path="/coaches" element={<Coaches />} />
             <Route path="/sponsors" element={<Sponsors />} />
