@@ -13,6 +13,7 @@ const navLinks = [
       { label: '7v7 Competitive', href: '/7v7' },
     ],
   },
+  { label: 'Tournaments', href: '/tournaments' },
   { label: 'About', href: '/about' },
   { label: 'Coaches', href: '/coaches' },
   { label: 'Sponsors', href: '/sponsors' },
@@ -20,7 +21,7 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
-export default function Header() {
+export default function Header({ hasAnnouncement = false }: { hasAnnouncement?: boolean }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [programsOpen, setProgramsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -32,7 +33,11 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <header
+      className={`fixed left-0 right-0 z-50 transition-[top] duration-200 ${
+        hasAnnouncement ? 'top-[46px] sm:top-[52px]' : 'top-0'
+      }`}
+    >
       {/* Red top accent bar */}
       <div className="nfl-topbar" />
 
@@ -124,6 +129,8 @@ export default function Header() {
                       `px-3 py-2 text-xs font-bold tracking-widest uppercase transition-colors border-b-2 ${
                         isActive
                           ? 'text-white border-brand-red'
+                          : link.href === '/tournaments'
+                          ? 'text-brand-gold hover:text-white border-transparent hover:border-brand-gold'
                           : 'text-gray-400 hover:text-white border-transparent hover:border-gray-600'
                       }`
                     }
@@ -190,6 +197,7 @@ export default function Header() {
 
               <div className="border-t border-gray-800 pt-3 mt-3 space-y-0.5">
                 {[
+                  { label: 'Tournaments', href: '/tournaments' },
                   { label: 'About', href: '/about' },
                   { label: 'Coaches', href: '/coaches' },
                   { label: 'Sponsors', href: '/sponsors' },
@@ -203,6 +211,8 @@ export default function Header() {
                       `block px-3 py-2.5 text-xs font-bold uppercase tracking-widest transition-colors border-l-2 ${
                         isActive
                           ? 'border-brand-red text-white bg-brand-red/5'
+                          : link.href === '/tournaments'
+                          ? 'border-transparent text-brand-gold hover:text-white hover:bg-white/5'
                           : 'border-transparent text-gray-400 hover:text-white hover:bg-white/5'
                       }`
                     }
