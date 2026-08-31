@@ -1,5 +1,6 @@
 import PageMeta from '../components/ui/PageMeta'
 import HeroSection from '../sections/HeroSection'
+import HalloweenTournamentBanner from '../sections/HalloweenTournamentBanner'
 import TerriAnnouncementSection from '../sections/TerriAnnouncementSection'
 import GallerySection from '../sections/GallerySection'
 import FallLeagueSection from '../sections/FallLeagueSection'
@@ -22,6 +23,7 @@ export default function Home() {
         ogDescription="NFL FLAG Fall League 2026 now open. Tuesday Nights at Ballparks of America, Branson MO. Ages 8U–17U. $250 early bird by Sept 4."
       />
       <HeroSection />
+      <HalloweenTournamentBanner />
       <TerriAnnouncementSection />
       <GallerySection />
       <FallLeagueSection />
