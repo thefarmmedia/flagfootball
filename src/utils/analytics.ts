@@ -12,6 +12,7 @@ type ConversionEvent =
   | 'register_nfl_flag'
   | 'register_girls_flag'
   | 'seven_on_seven_inquiry'
+  | 'tournament_pre_register'
   | 'sponsor_inquiry'
   | 'contact_submit'
   | 'phone_click'
