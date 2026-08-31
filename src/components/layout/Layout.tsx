@@ -3,9 +3,11 @@ import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Header from './Header'
 import Footer from './Footer'
+import TournamentTicker from '../ui/TournamentTicker'
 
 export default function Layout() {
   const location = useLocation()
+  const showTournamentTicker = location.pathname === '/'
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -13,7 +15,8 @@ export default function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      {showTournamentTicker && <TournamentTicker />}
+      <Header hasAnnouncement={showTournamentTicker} />
       <main className="flex-1">
         <AnimatePresence mode="wait">
           <motion.div
