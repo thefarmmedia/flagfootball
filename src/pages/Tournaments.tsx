@@ -127,6 +127,20 @@ export default function Tournaments() {
         </div>
       </section>
 
+      <section className="bg-black py-12 lg:py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <img
+            src="/images/tournaments/halloween-freaky-football-bowl-flyer.webp"
+            alt="Halloween Freaky Football Bowl flyer — Friday, October 31 at Ballparks of America, Branson, Missouri. 3v3 flag and 7v7 divisions for all ages, early bird pricing $295/team before October 2, $325/team October 2–23. Team costume contest, prizes, food, music. Presented by Missouri EPIC Tournaments."
+            width="1254"
+            height="1254"
+            loading="lazy"
+            decoding="async"
+            className="w-full rounded-2xl border border-orange-500/20 shadow-2xl"
+          />
+        </div>
+      </section>
+
       <section className="bg-gray-950 py-16 lg:py-20 border-y border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-6">
