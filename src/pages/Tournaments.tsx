@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { AlertCircle, CalendarDays, CheckCircle, Clock3, MapPin, PartyPopper, Trophy } from 'lucide-react'
 import PageMeta from '../components/ui/PageMeta'
-import { siteConfig } from '../config/site'
 import { trackEvent } from '../utils/analytics'
 
 type FormState = {
@@ -23,6 +22,8 @@ const initialForm: FormState = {
   cityState: '',
   notes: '',
 }
+
+const tournamentWebhookUrl = 'https://services.leadconnectorhq.com/hooks/qqwYX3OhtMdj6AoCfpXC/webhook-trigger/dbf4900f-c2b5-4b48-a60e-20b9a7a53b6f'
 
 export default function Tournaments() {
   const [form, setForm] = useState<FormState>(initialForm)
@@ -55,7 +56,7 @@ export default function Tournaments() {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: netlifyBody.toString(),
         }),
-        fetch(siteConfig.integrations.leadWebhookUrl, {
+        fetch(tournamentWebhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
