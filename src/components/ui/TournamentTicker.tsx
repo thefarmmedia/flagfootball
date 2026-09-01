@@ -128,20 +128,24 @@ export default function TournamentTicker() {
           flex: none;
           height: 42px;
           min-width: 88px;
-          opacity: .92;
-          transition: opacity .2s ease, transform .2s ease;
+          padding: 6px 10px;
+          background: rgba(255,255,255,.08);
+          border: 1px solid rgba(255,255,255,.1);
+          border-radius: 6px;
+          opacity: .96;
+          transition: opacity .2s ease, transform .2s ease, background .2s ease;
         }
         .tournament-ticker-logo:hover,
         .tournament-ticker-logo:focus-visible {
           opacity: 1;
           transform: scale(1.06);
+          background: rgba(255,255,255,.13);
         }
         .tournament-ticker-logo img {
           width: auto;
           height: 29px;
           max-width: 138px;
           object-fit: contain;
-          filter: brightness(0) invert(1);
         }
         @keyframes tournamentTickerScroll {
           from { transform: translateX(0); }
@@ -151,7 +155,7 @@ export default function TournamentTicker() {
           .tournament-ticker { height: 46px; }
           .tournament-ticker-line { gap: 22px; padding-right: 22px; }
           .tournament-ticker-message { font-size: .68rem; letter-spacing: .055em; }
-          .tournament-ticker-logo { height: 38px; min-width: 76px; }
+          .tournament-ticker-logo { height: 38px; min-width: 76px; padding: 5px 8px; }
           .tournament-ticker-logo img { height: 25px; max-width: 116px; }
         }
         @media (prefers-reduced-motion: reduce) {
