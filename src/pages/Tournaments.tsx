@@ -24,7 +24,6 @@ const initialForm: FormState = {
 }
 
 const tournamentWebhookUrl = 'https://services.leadconnectorhq.com/hooks/qqwYX3OhtMdj6AoCfpXC/webhook-trigger/5113b4dc-ff8c-492d-a0aa-249d5a779091'
-const tournamentFlyerUrl = 'https://raw.githubusercontent.com/thefarmmedia/flagfootball/main/public/images/tournaments/halloween-freaky-football-bowl.jpg?v=3'
 
 export default function Tournaments() {
   const [form, setForm] = useState<FormState>(initialForm)
@@ -89,55 +88,41 @@ export default function Tournaments() {
 
       <section className="relative overflow-hidden bg-black pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,122,0,.23),transparent_28%),radial-gradient(circle_at_85%_60%,rgba(80,255,0,.10),transparent_32%),linear-gradient(145deg,#050505,#190d04_48%,#050505)]" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-[1fr_.82fr] gap-10 lg:gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 border border-orange-400/40 bg-orange-500/10 px-3 py-1.5 text-xs font-black tracking-[.2em] uppercase text-orange-300 mb-5">
-                <Trophy size={15} /> Missouri EPIC Tournaments
-              </div>
-              <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl leading-[.84] font-black uppercase text-white text-shadow-xl">
-                Halloween
-                <span className="block text-orange-400">Freaky Football Bowl</span>
-              </h1>
-              <p className="mt-6 max-w-2xl text-xl text-gray-300 font-semibold">
-                One day. One field. One freaky EPIC experience — flag football, Halloween costumes, prizes, music and more in Branson.
-              </p>
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div>
+            <div className="inline-flex items-center gap-2 border border-orange-400/40 bg-orange-500/10 px-3 py-1.5 text-xs font-black tracking-[.2em] uppercase text-orange-300 mb-5">
+              <Trophy size={15} /> Missouri EPIC Tournaments
+            </div>
+            <h1 className="font-display text-6xl sm:text-7xl lg:text-8xl leading-[.84] font-black uppercase text-white text-shadow-xl">
+              Halloween
+              <span className="block text-orange-400">Freaky Football Bowl</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-xl text-gray-300 font-semibold">
+              One day. One field. One freaky EPIC experience — flag football, Halloween costumes, prizes, music and more in Branson.
+            </p>
 
-              <div className="mt-8 grid sm:grid-cols-2 gap-3 max-w-2xl">
-                <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
-                  <CalendarDays className="text-orange-400 shrink-0" />
-                  <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Date</div><div className="font-black text-white">October 31</div></div>
-                </div>
-                <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
-                  <MapPin className="text-lime-400 shrink-0" />
-                  <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Location</div><div className="font-black text-white">Ballparks of America, Branson</div></div>
-                </div>
-                <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
-                  <Clock3 className="text-brand-gold shrink-0" />
-                  <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Format</div><div className="font-black text-white">One-Day Tournament</div></div>
-                </div>
-                <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
-                  <PartyPopper className="text-brand-red shrink-0" />
-                  <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Experience</div><div className="font-black text-white">Football + Halloween Fun</div></div>
-                </div>
+            <div className="mt-8 grid sm:grid-cols-2 gap-3 max-w-2xl">
+              <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
+                <CalendarDays className="text-orange-400 shrink-0" />
+                <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Date</div><div className="font-black text-white">October 31</div></div>
               </div>
-
-              <a href="#pre-register" className="mt-8 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black px-7 py-4 font-black uppercase tracking-wider transition-colors">
-                Pre-Register Your Team
-              </a>
+              <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
+                <MapPin className="text-lime-400 shrink-0" />
+                <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Location</div><div className="font-black text-white">Ballparks of America, Branson</div></div>
+              </div>
+              <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
+                <Clock3 className="text-brand-gold shrink-0" />
+                <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Format</div><div className="font-black text-white">One-Day Tournament</div></div>
+              </div>
+              <div className="border border-white/10 bg-white/5 p-4 flex gap-3">
+                <PartyPopper className="text-brand-red shrink-0" />
+                <div><div className="text-xs uppercase tracking-widest text-gray-500 font-bold">Experience</div><div className="font-black text-white">Football + Halloween Fun</div></div>
+              </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[520px]">
-              <div className="absolute -inset-3 bg-gradient-to-br from-orange-500/25 via-transparent to-lime-400/20 blur-2xl" />
-              <img
-                src={tournamentFlyerUrl}
-                alt="Halloween Freaky Football Bowl tournament flyer"
-                width="600"
-                height="600"
-                className="relative w-full h-auto border border-orange-400/30 shadow-2xl shadow-black"
-              />
-              <p className="mt-3 text-center text-xs text-gray-500">Official Halloween Freaky Football Bowl event graphic</p>
-            </div>
+            <a href="#pre-register" className="mt-8 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black px-7 py-4 font-black uppercase tracking-wider transition-colors">
+              Pre-Register Your Team
+            </a>
           </div>
         </div>
       </section>
@@ -148,7 +133,7 @@ export default function Tournaments() {
             <div className="card p-6">
               <div className="text-orange-400 font-black uppercase tracking-widest text-xs mb-3">Tournament Play</div>
               <h2 className="text-2xl font-black text-white">Pool Play + Bracket</h2>
-              <p className="mt-3 text-gray-400">Two pool games followed by a single-elimination bracket, with 25-minute games shown on the event flyer.</p>
+              <p className="mt-3 text-gray-400">Two pool games followed by a single-elimination bracket, with 25-minute games.</p>
             </div>
             <div className="card p-6">
               <div className="text-lime-400 font-black uppercase tracking-widest text-xs mb-3">Halloween</div>
@@ -158,7 +143,7 @@ export default function Tournaments() {
             <div className="card p-6">
               <div className="text-brand-gold font-black uppercase tracking-widest text-xs mb-3">Team Pricing</div>
               <h2 className="text-2xl font-black text-white">$295 Early Bird</h2>
-              <p className="mt-3 text-gray-400">The flyer lists $295 per team before October 2 and $325 per team for regular registration through October 23.</p>
+              <p className="mt-3 text-gray-400">$295 per team before October 2 and $325 per team for regular registration through October 23.</p>
             </div>
           </div>
         </div>
