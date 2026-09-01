@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
-      {/* Fast, high-priority hero image. Video is deferred on desktop and skipped on mobile. */}
+      {/* Fast, high-priority hero image. Action footage is deferred on desktop and skipped on mobile. */}
       <img
         src="/images/photos/jpg/3.webp"
         alt=""
@@ -37,7 +37,7 @@ export default function HeroSection() {
       {loadVideo && (
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/highlight1.mp4"
+          src="/videos/highlight2.mp4"
           autoPlay
           muted
           loop
