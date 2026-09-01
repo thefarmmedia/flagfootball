@@ -129,10 +129,10 @@ export default function Tournaments() {
             <div className="relative mx-auto w-full max-w-[520px]">
               <div className="absolute -inset-3 bg-gradient-to-br from-orange-500/25 via-transparent to-lime-400/20 blur-2xl" />
               <img
-                src="/images/tournaments/halloween-freaky-football-bowl.svg"
+                src="/images/tournaments/halloween-freaky-football-bowl.jpg"
                 alt="Halloween Freaky Football Bowl tournament flyer"
-                width="460"
-                height="460"
+                width="600"
+                height="600"
                 className="relative w-full h-auto border border-orange-400/30 shadow-2xl shadow-black"
               />
               <p className="mt-3 text-center text-xs text-gray-500">Official Halloween Freaky Football Bowl event graphic</p>
