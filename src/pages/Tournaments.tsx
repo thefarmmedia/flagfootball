@@ -24,6 +24,7 @@ const initialForm: FormState = {
 }
 
 const tournamentWebhookUrl = 'https://services.leadconnectorhq.com/hooks/qqwYX3OhtMdj6AoCfpXC/webhook-trigger/5113b4dc-ff8c-492d-a0aa-249d5a779091'
+const tournamentFlyerUrl = 'https://raw.githubusercontent.com/thefarmmedia/flagfootball/main/public/images/tournaments/halloween-freaky-football-bowl.jpg?v=3'
 
 export default function Tournaments() {
   const [form, setForm] = useState<FormState>(initialForm)
@@ -129,7 +130,7 @@ export default function Tournaments() {
             <div className="relative mx-auto w-full max-w-[520px]">
               <div className="absolute -inset-3 bg-gradient-to-br from-orange-500/25 via-transparent to-lime-400/20 blur-2xl" />
               <img
-                src="/images/tournaments/halloween-freaky-football-bowl.jpg"
+                src={tournamentFlyerUrl}
                 alt="Halloween Freaky Football Bowl tournament flyer"
                 width="600"
                 height="600"
