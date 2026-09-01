@@ -131,9 +131,9 @@ export default function Tournaments() {
               <img
                 src="/images/tournaments/halloween-freaky-football-bowl.svg"
                 alt="Halloween Freaky Football Bowl tournament flyer"
-                width="260"
-                height="271"
-                className="relative w-full border border-orange-400/30 shadow-2xl shadow-black"
+                width="460"
+                height="460"
+                className="relative w-full h-auto border border-orange-400/30 shadow-2xl shadow-black"
               />
               <p className="mt-3 text-center text-xs text-gray-500">Official Halloween Freaky Football Bowl event graphic</p>
             </div>
