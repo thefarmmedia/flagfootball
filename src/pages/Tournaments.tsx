@@ -24,6 +24,7 @@ const initialForm: FormState = {
 }
 
 const tournamentWebhookUrl = 'https://services.leadconnectorhq.com/hooks/qqwYX3OhtMdj6AoCfpXC/webhook-trigger/5113b4dc-ff8c-492d-a0aa-249d5a779091'
+const zortsRegistrationUrl = 'https://www.zortssports.com/join/tournament/27681?plain=true'
 
 export default function Tournaments() {
   const [form, setForm] = useState<FormState>(initialForm)
@@ -120,24 +121,37 @@ export default function Tournaments() {
               </div>
             </div>
 
-            <a href="#pre-register" className="mt-8 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black px-7 py-4 font-black uppercase tracking-wider transition-colors">
-              Pre-Register Your Team
+            <a
+              href={zortsRegistrationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black px-7 py-4 font-black uppercase tracking-wider transition-colors"
+            >
+              Register Now on Zorts
             </a>
           </div>
         </div>
       </section>
 
       <section className="bg-black py-12 lg:py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <img
-            src="/images/tournaments/halloween-freaky-football-bowl-flyer.webp"
-            alt="Halloween Freaky Football Bowl flyer — Friday, October 31 at Ballparks of America, Branson, Missouri. 3v3 flag and 7v7 divisions for all ages, early bird pricing $295/team before October 2, $325/team October 2–23. Team costume contest, prizes, food, music. Presented by Missouri EPIC Tournaments."
-            width="1254"
-            height="1254"
+            src="/images/tournaments/halloween-freaky-football-bowl-flyer-v2.webp"
+            alt="Halloween Freaky Football Bowl flyer — Friday, October 31 at Ballparks of America, Branson, Missouri. 5v5 flag for boys and girls, 7v7 boys, 7v7 flag girls, adult divisions available. Early bird pricing $295/team before October 2, $325/team October 2–23. Spectator gate fee $15/person. Team costume contest, prizes, food, music. Registration is open now on Zorts Sports Apps. Presented by Missouri EPIC Tournaments."
+            width="1086"
+            height="1448"
             loading="lazy"
             decoding="async"
             className="w-full rounded-2xl border border-orange-500/20 shadow-2xl"
           />
+          <a
+            href={zortsRegistrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-400 text-black px-7 py-4 font-black uppercase tracking-wider transition-colors"
+          >
+            Register Now on Zorts
+          </a>
         </div>
       </section>
 
