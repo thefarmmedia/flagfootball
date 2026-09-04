@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import { ArrowRight, CalendarDays, MapPin, Trophy } from 'lucide-react'
+
+const zortsRegistrationUrl = 'https://www.zortssports.com/join/tournament/27681?plain=true'
 
 export default function HalloweenTournamentBanner() {
   return (
@@ -33,12 +34,17 @@ export default function HalloweenTournamentBanner() {
 
           <div className="lg:text-right">
             <div className="inline-block w-full max-w-md lg:max-w-sm border border-white/15 bg-black/55 backdrop-blur-sm p-5 shadow-2xl">
-              <div className="text-xs font-black uppercase tracking-[.2em] text-orange-300">Pre-registration is open</div>
-              <div className="mt-2 text-2xl font-black uppercase text-white">Be first in line when registration opens.</div>
-              <p className="mt-3 text-sm text-gray-400">Send us your team information now and Missouri EPIC will follow up with official registration details.</p>
-              <Link to="/tournaments#pre-register" className="mt-5 inline-flex w-full items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-black font-black uppercase tracking-wider px-5 py-3.5 transition-colors">
-                Tournament Details & Pre-Register <ArrowRight size={18} />
-              </Link>
+              <div className="text-xs font-black uppercase tracking-[.2em] text-orange-300">Registration is open</div>
+              <div className="mt-2 text-2xl font-black uppercase text-white">Secure your team's spot today.</div>
+              <p className="mt-3 text-sm text-gray-400">$295 per team early bird before October 2, $325 regular through October 23.</p>
+              <a
+                href={zortsRegistrationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-black font-black uppercase tracking-wider px-5 py-3.5 transition-colors"
+              >
+                Register Now <ArrowRight size={18} />
+              </a>
             </div>
           </div>
         </div>

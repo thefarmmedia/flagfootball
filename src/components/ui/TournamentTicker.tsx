@@ -5,7 +5,7 @@ function TickerLine({ duplicate = false }: { duplicate?: boolean }) {
   return (
     <div className="tournament-ticker-line" aria-hidden={duplicate || undefined}>
       <Link to="/tournaments" className="tournament-ticker-message">
-        🎃 HALLOWEEN FREAKY FOOTBALL BOWL — COSTUME CONTEST + PRIZES — $295 EARLY BIRD / $325 REGULAR — OCTOBER 31 AT BALLPARKS OF AMERICA — PRE-REGISTER NOW
+        🎃 HALLOWEEN FREAKY FOOTBALL BOWL — COSTUME CONTEST + PRIZES — $295 EARLY BIRD / $325 REGULAR — OCTOBER 31 AT BALLPARKS OF AMERICA — REGISTER NOW
       </Link>
       <span className="tournament-ticker-divider" aria-hidden="true" />
 
